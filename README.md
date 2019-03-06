@@ -11,3 +11,6 @@
 ## 算法
 #### 回溯法
 1. [N皇后问题](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/recall/NQueens.java)
+
+#### 其他
+1. [三门问题](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/theory/MontyHallSimulator.java)
