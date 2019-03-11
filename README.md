@@ -7,6 +7,8 @@
 #### 线性表(Linear List)
 1. [动态数组(DynamicArrayList)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/linear/DynamicArrayList.java)
 2. [多数组链表(MultiArrayLinkedList)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/MultiArrayLinkedList.java)
+3. [位图(BitMap)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/BitMap.java)
+4. [布隆过滤器(BloomFilter)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/BloomFilter.java)
 
 #### 树形结构(Tree)
 1. [最小堆(MinHeap)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/MinHeap.java)
