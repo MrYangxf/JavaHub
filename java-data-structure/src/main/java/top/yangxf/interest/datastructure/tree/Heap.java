@@ -10,5 +10,7 @@ public interface Heap<E> extends Countable {
     void push(E element);
 
     E poll();
+
+    E peek();
     
 }

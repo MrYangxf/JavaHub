@@ -77,6 +77,11 @@ public class MinHeap<E> implements Heap<E> {
     }
 
     @Override
+    public E peek() {
+        return isEmpty() ? null : getElement(1);
+    }
+
+    @Override
     public int size() {
         return size;
     }

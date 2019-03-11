@@ -11,6 +11,8 @@
     <modules>
         <module>java-util</module>
         <module>java-data-structure</module>
+        <module>java-benchmark</module>
+        <module>java-algorithm</module>
     </modules>
 
     <properties>
