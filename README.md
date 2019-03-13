@@ -21,5 +21,8 @@
 #### 回溯法(Backtracking)
 1. [N皇后问题(NQueens)](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/recall/NQueens.java)
 
+#### 字符串算法(String)
+1. [Levenshtein编辑距离](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/string/LevenshteinEditDistance.java)
+
 #### 其他(Other)
 1. [三门问题(MontyHall)](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/theory/MontyHallSimulator.java)
