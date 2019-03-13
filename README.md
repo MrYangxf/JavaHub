@@ -14,6 +14,9 @@
 1. [最小堆(MinHeap)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/MinHeap.java)
 2. [并查集(DisjointSet)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/DisjointSet.java)
 
+#### 缓存(Cache)
+1. [LRU](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/cache/LRUCache.java)
+
 ## 算法(Algorithm)
 #### 回溯法(Backtracking)
 1. [N皇后问题(NQueens)](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/recall/NQueens.java)
