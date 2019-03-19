@@ -34,7 +34,7 @@ public class MultiArrayLinkedListTest {
         assertEquals(list.get(0), "word");
         printFree(list);
 
-        list.insert(0, "hello");
+        list.add(0, "hello");
         assertEquals(list.get(0), "hello");
         printFree(list);
 
@@ -48,11 +48,11 @@ public class MultiArrayLinkedListTest {
         
         list.add("this");
         list.add("test");
-        list.insert(1, "is");
+        list.add(1, "is");
         assertEquals(list.toString(), "this -> is -> test");
         printFree(list);
         
-        list.insert(2, "a");
+        list.add(2, "a");
         assertEquals(list.toString(), "this -> is -> a -> test");
         printFree(list);
 

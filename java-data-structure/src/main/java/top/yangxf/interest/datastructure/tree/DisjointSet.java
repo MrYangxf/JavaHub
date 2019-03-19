@@ -1,5 +1,6 @@
 package top.yangxf.interest.datastructure.tree;
 
+import java.io.Serializable;
 import java.util.*;
 
 import static top.yangxf.interest.util.common.ObjectUtil.checkNotNull;
@@ -13,18 +14,10 @@ import static top.yangxf.interest.util.common.ObjectUtil.checkNotNull;
  *
  * @author yangxf
  */
-public class DisjointSet<T> {
+public class DisjointSet<T> implements Serializable {
+    private static final long serialVersionUID = 3134700471905625636L;
 
     private Map<T, Node<T>> nodeMap = new HashMap<>();
-
-    public void show() {
-        Map<Node<T>, List<T>> setMap = new HashMap<>();
-        for (Map.Entry<T, Node<T>> entry : nodeMap.entrySet()) {
-            setMap.computeIfAbsent(findSet(entry.getValue()), k -> new ArrayList<>())
-                  .add(entry.getKey());
-        }
-        setMap.forEach((k, v) -> System.out.println(v));
-    }
 
     /**
      * 创建一个只包含element的集合，并且添加到森林中
@@ -94,6 +87,19 @@ public class DisjointSet<T> {
         }
 
         return findSet(leftNode) == findSet(rightNode);
+    }
+
+    public Collection<Set<T>> toSets() {
+        Map<Node<T>, Set<T>> setMap = new HashMap<>();
+        for (Map.Entry<T, Node<T>> entry : nodeMap.entrySet()) {
+            setMap.computeIfAbsent(findSet(entry.getValue()), k -> new HashSet<>())
+                  .add(entry.getKey());
+        }
+        return setMap.values();
+    }
+
+    public void show() {
+        toSets().forEach(System.out::println);
     }
 
     /**

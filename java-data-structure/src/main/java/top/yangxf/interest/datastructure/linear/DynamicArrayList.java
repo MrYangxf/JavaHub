@@ -45,14 +45,24 @@ public class DynamicArrayList<E> implements List<E> {
      * O(n)
      */
     @Override
-    public void insert(int index, E element) {
+    public void add(int index, E element) {
         checkIndexRange(index, 0, size + 1);
         checkNotNull(element);
         ensureCapacity();
         System.arraycopy(data, index, data,
-                index + 1, size - index);
+                         index + 1, size - index);
         data[index] = element;
         size++;
+    }
+
+    @Override
+    public void addFirst(E element) {
+        add(0, element);
+    }
+
+    @Override
+    public void addLast(E element) {
+        add(element);
     }
 
     /**
@@ -75,9 +85,19 @@ public class DynamicArrayList<E> implements List<E> {
         checkIndexRange(index, 0, size);
         E rmElement = getElement(index);
         System.arraycopy(data, index + 1,
-                data, index, size - index);
+                         data, index, size - index);
         data[size--] = null;
         return rmElement;
+    }
+
+    @Override
+    public E removeFirst() {
+        return removeAt(0);
+    }
+
+    @Override
+    public E removeLast() {
+        return removeAt(size - 1);
     }
 
     /**
@@ -92,9 +112,28 @@ public class DynamicArrayList<E> implements List<E> {
     }
 
     @Override
+    public E replaceFirst(E newElement) {
+        return replace(0, newElement);
+    }
+
+    @Override
+    public E replaceLast(E newElement) {
+        return replace(size - 1, newElement);
+    }
+
+    @Override
     public void clear() {
         Arrays.fill(data, 0, size, null);
         size = 0;
+    }
+
+    @Override
+    public List<E> reversed() {
+        List<E> reversed = new DynamicArrayList<>(capacity);
+        for (int i = size - 1; i > 0; i--) {
+            reversed.add(getElement(i));
+        }
+        return reversed;
     }
 
     /**
@@ -103,6 +142,16 @@ public class DynamicArrayList<E> implements List<E> {
     @Override
     public E get(int index) {
         return getElement(index);
+    }
+
+    @Override
+    public E getFirst() {
+        return get(0);
+    }
+
+    @Override
+    public E getLast() {
+        return get(size - 1);
     }
 
     /**
@@ -158,7 +207,6 @@ public class DynamicArrayList<E> implements List<E> {
             data = new Object[capacity];
             System.arraycopy(oldData, 0, data, 0, currentSize);
         }
-
     }
 
 }

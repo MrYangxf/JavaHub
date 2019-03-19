@@ -20,5 +20,5 @@ public final class MathUtil {
         n |= n >>> 16;
         return (n < 0) ? 1 : (n >= MAXIMUM) ? MAXIMUM : n + 1;
     }
-
+    
 }

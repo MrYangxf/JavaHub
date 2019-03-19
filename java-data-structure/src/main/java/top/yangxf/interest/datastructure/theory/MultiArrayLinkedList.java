@@ -52,11 +52,11 @@ public class MultiArrayLinkedList<E> implements List<E> {
 
     @Override
     public void add(E element) {
-        insert(size, element);
+        add(size, element);
     }
 
     @Override
-    public void insert(int index, E element) {
+    public void add(int index, E element) {
         checkIndexRange(index, 0, size + 1);
         checkNotNull(element);
         ensureCapacity();
@@ -84,6 +84,16 @@ public class MultiArrayLinkedList<E> implements List<E> {
             nextIndices[storeIdx] = nextDataIndex;
         }
         size++;
+    }
+
+    @Override
+    public void addFirst(E element) {
+        add(0, element);
+    }
+
+    @Override
+    public void addLast(E element) {
+        add(element);
     }
 
     @Override
@@ -127,12 +137,32 @@ public class MultiArrayLinkedList<E> implements List<E> {
     }
 
     @Override
+    public E removeFirst() {
+        return removeAt(headIndex);
+    }
+
+    @Override
+    public E removeLast() {
+        return removeAt(tailIndex);
+    }
+
+    @Override
     public E replace(int index, E newElement) {
         checkNotNull(newElement);
         int dataIndex = getDataIndex(index);
         E oldElement = getElement(dataIndex);
         data[dataIndex] = newElement;
         return oldElement;
+    }
+
+    @Override
+    public E replaceFirst(E newElement) {
+        return replace(headIndex, newElement);
+    }
+
+    @Override
+    public E replaceLast(E newElement) {
+        return replace(tailIndex, newElement);
     }
 
     @Override
@@ -144,8 +174,24 @@ public class MultiArrayLinkedList<E> implements List<E> {
     }
 
     @Override
+    public List<E> reversed() {
+        // todo
+        return null;
+    }
+
+    @Override
     public E get(int index) {
         return getElement(getDataIndex(index));
+    }
+
+    @Override
+    public E getFirst() {
+        return get(headIndex);
+    }
+
+    @Override
+    public E getLast() {
+        return get(tailIndex);
     }
 
     @Override
