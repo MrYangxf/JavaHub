@@ -24,5 +24,8 @@
 #### 字符串算法(String)
 1. [Levenshtein编辑距离](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/string/LevenshteinEditDistance.java)
 
+#### 矩阵(Matrix)
+1. [矩阵(Matrix)](https://github.com/MrYangxf/JavaHub/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/math/Matrix.java)
+
 #### 其他(Other)
 1. [三门问题(MontyHall)](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/theory/MontyHallSimulator.java)
