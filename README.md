@@ -18,6 +18,9 @@
 1. [LRU](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/cache/LRUCache.java)
 
 ## 算法(Algorithm)
+#### 排序（Sort）
+1. [计数排序(Counting Sort)](https://github.com/MrYangxf/JavaHub/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/sort/CountingSorter.java)
+
 #### 回溯法(Backtracking)
 1. [N皇后问题(NQueens)](https://github.com/MrYangxf/interest/blob/master/java-algorithm/src/main/java/top/yangxf/interest/algorithm/recall/NQueens.java)
 
