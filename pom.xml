@@ -13,7 +13,6 @@
         <module>java-data-structure</module>
         <module>java-benchmark</module>
         <module>java-algorithm</module>
-        <module>java-flow</module>
     </modules>
 
     <properties>

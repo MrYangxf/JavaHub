@@ -9,9 +9,9 @@ public class MatrixTest {
         Integer[][] integers = {
                 {1, 2, 34, 12, 6, 2},
                 {8, 3, 22, 32, 8, 332},
-                // {3, 2, 123, 55, 5, 44},
-                // {52, 234, 99, 1, 4, 1},
-                // {1, 66, 34, 3, 3, 5},
+                {3, 2, 123, 55, 5, 44},
+                {52, 234, 99, 1, 4, 1},
+                {1, 66, 34, 3, 3, 5},
         };
         Matrix<Integer> matrix = new Matrix<>(integers);
         matrix.show();
