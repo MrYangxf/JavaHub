@@ -13,13 +13,13 @@ public class MaxHeapTest {
     @Test
     public void test() {
         Integer[] integers = {2, 4, 2, 7, 2, 3, 6, 78, 22, 3, 4};
-        Heap<Integer> h = new MaxHeap<>(integers, Comparator.comparingInt(o -> o));
+        Heap<Integer> h = new BinaryHeap<>(integers, Comparator.reverseOrder());
 
         assertEquals(h.size(), integers.length);
 
         Arrays.sort(integers);
         for (int i = integers.length - 1; i >= 0; --i) {
-            assertEquals(h.poll(), integers[i]);
+            assertEquals(h.pop(), integers[i]);
         }
 
         assertTrue(h.isEmpty());

@@ -15,23 +15,23 @@ public class FibonacciHeapTest {
         assertFalse(fh.isEmpty());
         assertEquals((Integer) 1, fh.peek());
 
-        assertEquals((Integer) 1, fh.poll());
+        assertEquals((Integer) 1, fh.pop());
 
         fh.push(5);
         fh.push(1);
-        assertEquals((Integer) 1, fh.poll());
-        assertEquals((Integer) 5, fh.poll());
+        assertEquals((Integer) 1, fh.pop());
+        assertEquals((Integer) 5, fh.pop());
 
         fh.push(8);
         fh.push(3);
         fh.push(1);
         fh.push(7);
         fh.push(-2);
-        assertEquals((Integer) (-2), fh.poll());
-        assertEquals((Integer) 1, fh.poll());
-        assertEquals((Integer) 3, fh.poll());
-        assertEquals((Integer) 7, fh.poll());
-        assertEquals((Integer) 8, fh.poll());
+        assertEquals((Integer) (-2), fh.pop());
+        assertEquals((Integer) 1, fh.pop());
+        assertEquals((Integer) 3, fh.pop());
+        assertEquals((Integer) 7, fh.pop());
+        assertEquals((Integer) 8, fh.pop());
         assertTrue(fh.isEmpty());
 
     }

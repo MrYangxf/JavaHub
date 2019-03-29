@@ -55,7 +55,7 @@ public class FibonacciHeap<E> implements Heap<E> {
     }
 
     @Override
-    public E poll() {
+    public E pop() {
         if (minimum == null) {
             return null;
         }
@@ -68,6 +68,16 @@ public class FibonacciHeap<E> implements Heap<E> {
     @Override
     public E peek() {
         return isEmpty() ? null : minimum.data;
+    }
+
+    @Override
+    public E replace(int index, E newElement) {
+        return null;
+    }
+
+    @Override
+    public void pushAll(Heap<E> heap) {
+
     }
 
     public FibonacciHeap<E> union(FibonacciHeap<E> heap) {

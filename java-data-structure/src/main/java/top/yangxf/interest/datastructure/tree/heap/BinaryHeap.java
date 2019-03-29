@@ -1,6 +1,7 @@
 package top.yangxf.interest.datastructure.tree.heap;
 
 import top.yangxf.interest.datastructure.tree.Heap;
+import top.yangxf.interest.util.common.MathUtil;
 
 import java.util.Comparator;
 
@@ -9,16 +10,15 @@ import static top.yangxf.interest.util.common.ObjectUtil.checkNotNull;
 
 /**
  * <pre>
- *     
- * 小顶堆
+ * 二叉堆
  * 基于数组存储的完全二叉树
- * 堆顶总是最小的元素
- * 
+ * 堆顶总是最小（或最大）的元素
+ * 默认是最小堆，可通过实现 {@link Comparator} 来实现最大堆
  * </pre>
  *
  * @author yangxf
  */
-public class MinHeap<E> implements Heap<E> {
+public class BinaryHeap<E> implements Heap<E> {
 
     private static final int DEFAULT_INITIAL_CAP = 8;
 
@@ -27,7 +27,7 @@ public class MinHeap<E> implements Heap<E> {
     private int capacity;
     private int size;
 
-    public MinHeap(E[] elements, Comparator<E> comparator) {
+    public BinaryHeap(E[] elements, Comparator<E> comparator) {
         checkNotNull(elements);
         this.comparator = comparator;
         size = elements.length;
@@ -37,15 +37,15 @@ public class MinHeap<E> implements Heap<E> {
         heapify();
     }
 
-    public MinHeap(Comparator<E> comparator) {
+    public BinaryHeap(Comparator<E> comparator) {
         this(DEFAULT_INITIAL_CAP, comparator);
     }
 
-    public MinHeap(int initialCapacity) {
+    public BinaryHeap(int initialCapacity) {
         this(initialCapacity, null);
     }
 
-    public MinHeap(int initialCapacity, Comparator<E> comparator) {
+    public BinaryHeap(int initialCapacity, Comparator<E> comparator) {
         if (initialCapacity < 0) {
             throw new IllegalArgumentException("initialCapacity must be >= 0");
         }
@@ -64,7 +64,7 @@ public class MinHeap<E> implements Heap<E> {
     }
 
     @Override
-    public E poll() {
+    public E pop() {
         if (isEmpty()) {
             return null;
         }
@@ -79,6 +79,33 @@ public class MinHeap<E> implements Heap<E> {
     @Override
     public E peek() {
         return isEmpty() ? null : getElement(1);
+    }
+
+    @Override
+    public E replace(int index, E newElement) {
+        throw new UnsupportedOperationException("binary heap unsppert replace.");
+    }
+
+    @Override
+    public void pushAll(Heap<E> heap) {
+        if (heap instanceof BinaryHeap) {
+            BinaryHeap<E> h = (BinaryHeap<E>) heap;
+            int oldSize1 = size,
+                    oldSize2 = h.size;
+            // oldSize1 + oldSize2 > MaxValue ?
+            if (Integer.MAX_VALUE - oldSize1 < oldSize2) {
+                throw new Error("merge size > Integer.MAX_VALUE");
+            }
+            int c = MathUtil.nextPowerOf2(oldSize1 + oldSize2);
+            capacity = (c < DEFAULT_INITIAL_CAP ? 16 : c) + 1;
+            Object[] table1 = table,
+                    table2 = h.table;
+            table = new Object[capacity];
+            System.arraycopy(table1, 1, table, 1, oldSize1);
+            System.arraycopy(table2, 1, table, oldSize1 + 1, oldSize2);
+            size = oldSize1 + oldSize2;
+            heapify();
+        }
     }
 
     @Override
@@ -110,7 +137,7 @@ public class MinHeap<E> implements Heap<E> {
      * <pre>
      * shiftUp操作
      * 比较当前节点和父节点，
-     * 如果不符合堆的性质（小顶堆子节点必须比父节点大），交换当前节点和父节点
+     * 如果不符合堆的性质，交换当前节点和父节点
      * 然后继续向上比较
      * 直到符合堆的性质或者到达堆顶部为止
      * </pre>
@@ -119,7 +146,7 @@ public class MinHeap<E> implements Heap<E> {
         for (int c = i; ; ) {
             int p = c >>> 1;
             if (p > 0 &&
-                    compare(c, p) < 0) {
+                compare(c, p) < 0) {
                 swap(c, p);
                 c = p;
             } else {
@@ -146,7 +173,7 @@ public class MinHeap<E> implements Heap<E> {
                     break;
                 }
             } else if (l <= size &&
-                    compare(c, l) > 0) {
+                       compare(c, l) > 0) {
                 swap(c, l);
                 c = l;
             } else {
