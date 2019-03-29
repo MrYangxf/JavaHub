@@ -11,7 +11,7 @@
 4. [布隆过滤器(BloomFilter)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/BloomFilter.java)
 
 #### 树形结构(Tree)
-1. [最小堆(MinHeap)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/MinHeap.java)
+1. [二叉堆(BinaryHeap)](https://github.com/MrYangxf/JavaHub/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/BinaryHeap.java)
 2. [并查集(DisjointSet)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/DisjointSet.java)
 
 #### 缓存(Cache)
