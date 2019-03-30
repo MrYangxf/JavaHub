@@ -122,7 +122,7 @@ public class BinaryHeap<E> implements Heap<E> {
      *  heapify 操作能够快速的将线性表转换为堆，
      *  原理是，找到最后一个包含叶子节点的节点，
      *  然后从这个节点向前遍历，做shiftDown操作。
-     *  虽然heapfiy和循环push操作的时间复杂度都是 O (n * log n)
+     *  heapify的时间复杂度是O(n)的
      *  但是，很明显，heapfiy循环次数更少。
      * </pre>
      */
@@ -145,13 +145,12 @@ public class BinaryHeap<E> implements Heap<E> {
     private void shiftUp(final int i) {
         for (int c = i; ; ) {
             int p = c >>> 1;
-            if (p > 0 &&
-                compare(c, p) < 0) {
-                swap(c, p);
-                c = p;
-            } else {
+            if (p < 1 || 
+                compare(c, p) >= 0) {
                 break;
             }
+            swap(c, p);
+            c = p;
         }
     }
 
@@ -166,19 +165,18 @@ public class BinaryHeap<E> implements Heap<E> {
             int l = c << 1, r = l + 1;
             if (r <= size) {
                 int ch = compare(l, r) < 0 ? l : r;
-                if (compare(c, ch) > 0) {
-                    swap(c, ch);
-                    c = ch;
-                } else {
+                if (compare(c, ch) <= 0) {
                     break;
                 }
+                swap(c, ch);
+                c = ch;
             } else if (l <= size &&
                        compare(c, l) > 0) {
                 swap(c, l);
                 c = l;
             } else {
                 break;
-            }
+            } 
         }
     }
 
