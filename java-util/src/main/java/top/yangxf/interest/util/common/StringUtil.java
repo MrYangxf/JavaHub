@@ -2,6 +2,8 @@ package top.yangxf.interest.util.common;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+import static top.yangxf.interest.util.common.ObjectUtil.checkNotNull;
+
 /**
  * @author yangxf
  */
@@ -22,6 +24,24 @@ public final class StringUtil {
         }
 
         return new String(chars);
+    }
+
+    public static String fill(String source, int fillLength, char fillChar, boolean leftAligned) {
+        checkNotNull(source, "source");
+        if (fillLength < 1) {
+            return source;
+        }
+
+        char[] chs = new char[fillLength];
+        for (int i = 0; i < fillLength; i++) {
+            chs[i] = fillChar;
+        }
+
+        if (leftAligned) {
+            return source + String.valueOf(chs);
+        } else {
+            return String.valueOf(chs) + source;
+        }
     }
 
     private static final char[] CHAR_POOL;
