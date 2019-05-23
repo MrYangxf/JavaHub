@@ -1,6 +1,7 @@
 package top.yangxf.interest.util.common;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Map;
 
 /**
@@ -10,6 +11,13 @@ public final class ObjectUtil {
 
     private ObjectUtil() {
         throw new InstantiationError("ObjectUtil can't be instantiated");
+    }
+
+    @SuppressWarnings("unchecked")
+    public static int compare(Comparator comparator, Object o1, Object o2) {
+        return comparator == null ?
+                ((Comparable) o1).compareTo(o2) :
+                comparator.compare(o1, o2);
     }
 
     // ============ null or nonnull or null ... ============

@@ -14,7 +14,6 @@ public interface Tree<K, V> extends Countable {
     V replace(K key, V newValue);
 
     V get(K key);
-    
-    
-    
+
+    int height();
 }

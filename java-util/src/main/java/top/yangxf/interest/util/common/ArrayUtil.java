@@ -1,6 +1,7 @@
 package top.yangxf.interest.util.common;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import static top.yangxf.interest.util.common.ObjectUtil.checkNotNull;
 
@@ -12,7 +13,7 @@ public final class ArrayUtil {
     private ArrayUtil() {
         throw new InstantiationError("ArrayUtil can't be instantiated");
     }
-
+    
     /**
      * Included fromIndex but excluded toIndex.
      */
