@@ -9,6 +9,7 @@
 2. [多数组链表(MultiArrayLinkedList)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/MultiArrayLinkedList.java)
 3. [位图(BitMap)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/BitMap.java)
 4. [布隆过滤器(BloomFilter)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/BloomFilter.java)
+5. [跳表(SkipList)](https://github.com/MrYangxf/JavaHub/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/map/LinkedSkipListMap.java)
 
 #### 树形结构(Tree)
 1. [二叉堆(BinaryHeap)](https://github.com/MrYangxf/JavaHub/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/BinaryHeap.java)
