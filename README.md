@@ -14,6 +14,7 @@
 #### 树形结构(Tree)
 1. [二叉堆(BinaryHeap)](https://github.com/MrYangxf/JavaHub/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/heap/BinaryHeap.java)
 2. [并查集(DisjointSet)](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/DisjointSet.java)
+3. [B树(B-Tree)](https://github.com/MrYangxf/JavaHub/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/tree/BTree.java)
 
 #### 缓存(Cache)
 1. [LRU](https://github.com/MrYangxf/interest/blob/master/java-data-structure/src/main/java/top/yangxf/interest/datastructure/theory/cache/LRUCache.java)
